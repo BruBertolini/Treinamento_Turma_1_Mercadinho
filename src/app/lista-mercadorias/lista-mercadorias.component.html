@@ -1,0 +1,12 @@
+
+<h2>Listagem de Mercadorias</h2>
+
+<div *ngFor="let mercadoria of lista">
+    <span>Nome: {{ mercadoria.nome }}</span>
+    <span>Preco: {{ mercadoria.preco }} </span>
+    <span>Quantidade: {{ mercadoria.quantidade }} </span>
+    <span>Descricao: {{ mercadoria.descricao }} </span>
+    <span>Categoria: {{ mercadoria.categoria }} </span>
+</div>
+
+<button (click)="irParaCadastro()" >Cadastrar</button>

@@ -1,0 +1,132 @@
+<div>
+  <form [formGroup]="formulario" (ngSubmit)="salvar()">
+    <div>
+      <label for="nome">Nome:</label>
+      <input type="text" name="nome" formControlName="nome" required />
+      <span
+        *ngIf="
+          formulario.get('nome').errors?.required &&
+          formulario.get('nome').touched
+        "
+        >Campo Obrigatório
+      </span>
+      <span
+        *ngIf="
+          formulario.get('nome').errors?.minlength &&
+          formulario.get('nome').touched
+        "
+        >Informar no mínimo dois caractéres
+      </span>
+    </div>
+    <div>
+      <label for="preco">Preço:</label>
+      <input type="number" name="preco" formControlName="preco" required />
+      <span
+        *ngIf="
+          formulario.get('preco').errors?.required &&
+          formulario.get('preco').touched
+        "
+        >Campo Obrigatório
+      </span>
+      <span
+        *ngIf="
+          formulario.get('preco').errors?.min &&
+          formulario.get('preco').touched
+        "
+        >Preço tem que ser maior que zero
+      </span>
+    </div>
+    <div>
+      <label for="qtd">Quantidade:</label>
+      <input type="number" name="qtd" formControlName="quantidade" required />
+      <span
+        *ngIf="
+          formulario.get('quantidade').errors?.required &&
+          formulario.get('quantidade').touched
+        "
+        >Campo Obrigatório
+      </span>
+      <span
+      *ngIf="
+        formulario.get('quantidade').errors?.min &&
+        formulario.get('quantidade').touched
+      "
+      >Quantidade deve ser maior que 0
+    </span>
+    </div>
+    <div>
+      <label for="desc">Descrição:</label>
+      <input type="text" name="desc" formControlName="descricao" />
+    </div>
+    <div>
+      <label for="categoria">Categoria:</label>
+      Roupa
+      <input
+        type="radio"
+        name="categoria"
+        value="Roupa"
+        formControlName="categoria"
+        required
+      />
+      Fruta
+      <input
+        type="radio"
+        name="categoria"
+        value="Fruta"
+        formControlName="categoria"
+        required
+      />
+      Carne
+      <input
+        type="radio"
+        name="categoria"
+        value="Carne"
+        formControlName="categoria"
+        required
+      />
+      Eletrônico
+      <input
+        type="radio"
+        name="categoria"
+        value="Eletrônico"
+        formControlName="categoria"
+        required
+      />
+      Padaria
+      <input
+        type="radio"
+        name="categoria"
+        value="Padaria"
+        formControlName="categoria"
+        required
+      />
+      Limpeza
+      <input
+        type="radio"
+        name="categoria"
+        value="Limpeza"
+        formControlName="categoria"
+        required
+      />
+      Artigos de Beleza
+      <input
+        type="radio"
+        name="categoria"
+        value="Artigos de Beleza"
+        formControlName="categoria"
+        required
+      />
+      <span
+        *ngIf="
+          formulario.get('categoria').errors?.required &&
+          formulario.get('categoria').touched
+        "
+        >Campo Obrigatório
+      </span>
+    </div>
+    <div>
+      <!-- <button type="submit" >Salvar</button> -->
+      <button type="submit" [disabled]="formulario.invalid">Salvar</button>
+    </div>
+  </form>
+</div>
