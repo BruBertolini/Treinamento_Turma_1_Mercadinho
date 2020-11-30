@@ -30,8 +30,7 @@
       </span>
       <span
         *ngIf="
-          formulario.get('preco').errors?.min &&
-          formulario.get('preco').touched
+          formulario.get('preco').errors?.min && formulario.get('preco').touched
         "
         >Preço tem que ser maior que zero
       </span>
@@ -47,75 +46,96 @@
         >Campo Obrigatório
       </span>
       <span
-      *ngIf="
-        formulario.get('quantidade').errors?.min &&
-        formulario.get('quantidade').touched
-      "
-      >Quantidade deve ser maior que 0
-    </span>
+        *ngIf="
+          formulario.get('quantidade').errors?.min &&
+          formulario.get('quantidade').touched
+        "
+        >Quantidade deve ser maior que 0
+      </span>
     </div>
     <div>
       <label for="desc">Descrição:</label>
       <input type="text" name="desc" formControlName="descricao" />
     </div>
-    <div>
+    <div class="categorias">
       <label for="categoria">Categoria:</label>
-      Roupa
-      <input
-        type="radio"
-        name="categoria"
-        value="Roupa"
-        formControlName="categoria"
-        required
-      />
-      Fruta
-      <input
-        type="radio"
-        name="categoria"
-        value="Fruta"
-        formControlName="categoria"
-        required
-      />
-      Carne
-      <input
-        type="radio"
-        name="categoria"
-        value="Carne"
-        formControlName="categoria"
-        required
-      />
-      Eletrônico
-      <input
-        type="radio"
-        name="categoria"
-        value="Eletrônico"
-        formControlName="categoria"
-        required
-      />
-      Padaria
-      <input
-        type="radio"
-        name="categoria"
-        value="Padaria"
-        formControlName="categoria"
-        required
-      />
-      Limpeza
-      <input
-        type="radio"
-        name="categoria"
-        value="Limpeza"
-        formControlName="categoria"
-        required
-      />
-      Artigos de Beleza
-      <input
-        type="radio"
-        name="categoria"
-        value="Artigos de Beleza"
-        formControlName="categoria"
-        required
-      />
+      <div>
+        <input
+          type="radio"
+          name="categoria"
+          value="Roupa"
+          formControlName="categoria"
+          required
+        />
+        <span>Roupa </span>
+      </div>
+
+      <div>
+        <input
+          type="radio"
+          name="categoria"
+          value="Fruta"
+          formControlName="categoria"
+          required
+        />
+        <span>Fruta</span>
+      </div>
+
+      <div>
+        <input
+          type="radio"
+          name="categoria"
+          value="Carne"
+          formControlName="categoria"
+          required
+        />
+        <span>Carne</span>
+      </div>
+
+      <div>
+        <input
+          type="radio"
+          name="categoria"
+          value="Eletrônico"
+          formControlName="categoria"
+          required
+        />
+        <span>Eletrônico</span>
+      </div>
+
+      <div>
+        <input
+          type="radio"
+          name="categoria"
+          value="Padaria"
+          formControlName="categoria"
+          required
+        />
+        <span>Padaria</span>
+      </div>
+
+      <div>
+        <input
+          type="radio"
+          name="categoria"
+          value="Limpeza"
+          formControlName="categoria"
+          required
+        />
+        <span>Limpeza</span>
+      </div>
+
+      <div>
+        <input
+          type="radio"
+          name="categoria"
+          value="Artigos de Beleza"
+          formControlName="categoria"
+          required
+        />
+        <span>Artigos de Beleza</span>
+      </div>
+
       <span
         *ngIf="
           formulario.get('categoria').errors?.required &&
