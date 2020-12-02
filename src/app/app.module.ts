@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { ListaMercadoriasComponent } from './lista-mercadorias/lista-mercadorias.component';
 import { CadastroMercadoriaComponent } from './cadastro-mercadoria/cadastro-mercadoria.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MercadoriaService } from './mercadoria.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,9 +18,10 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [MercadoriaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
